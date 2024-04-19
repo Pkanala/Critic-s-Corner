@@ -1,0 +1,20 @@
+{
+  "name": "Critic's Corner",
+  "version": "0.1.0",
+  "description": "This Chrome addon rates movies based on the sentiment analysis of IMDb viewer reviews.",
+  "manifest_version": 2,
+  "content_scripts": [{
+    "matches": ["https://www.imdb.com/title/*"],
+    "js": ["chrome.js"]
+  }],
+  "browser_action": {
+    "default_icon": "movie.png",
+    "default_popup": "movie_rating.html",
+    "default_title": "Get Movie Review"
+  },
+  "permissions": [
+    "tabs",
+    "http://127.0.0.1:5001/",
+    "http://127.0.0.1:5001/process_data"
+  ]
+}
